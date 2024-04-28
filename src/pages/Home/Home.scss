@@ -1,1 +1,9 @@
-#home-page {}
+#home-page {
+
+    svg {
+        $size: 2.5rem;
+
+        width: $size;
+        height: $size;
+    }
+}

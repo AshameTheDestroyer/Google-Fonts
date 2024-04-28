@@ -1,0 +1,36 @@
+.marquee {
+    --speed: 10s;
+    display: grid;
+
+    mask-image: linear-gradient(90deg, transparent, white 10% 90%, transparent);
+
+    &>* {
+        --starting-offset: 0%;
+        --ending-offset: 100%;
+
+        grid-row: 1;
+        grid-column: 1;
+
+        animation-name: marquee-movement;
+        animation-duration: var(--speed);
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+        animation-timing-function: cubic-bezier(1, 1, 1, 1);
+
+        @keyframes marquee-movement {
+            from {
+                transform: translateX(var(--starting-offset));
+            }
+
+            to {
+                transform: translateX(var(--ending-offset));
+            }
+        }
+
+        &:first-child {
+            --starting-offset: -100%;
+            --ending-offset: 0%;
+        }
+    }
+}

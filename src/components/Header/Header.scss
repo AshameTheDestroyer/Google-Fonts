@@ -1,0 +1,29 @@
+#main-header {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    place-items: center;
+    gap: 2rem;
+
+    padding: var(--padding);
+    margin: calc(var(--padding) * -1);
+    margin-bottom: 0;
+
+    #logo {
+        display: flex;
+        place-content: center;
+        place-items: center;
+
+        &>svg {
+            $size: 5rem;
+
+            width: $size;
+            height: $size;
+        }
+
+        &>h1 {
+            font-size: 175%;
+            width: max-content;
+        }
+    }
+}

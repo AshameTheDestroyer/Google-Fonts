@@ -1,0 +1,24 @@
+.rating-displayer {
+    display: grid;
+
+    &>span {
+        grid-row: 1;
+        grid-column: 1;
+        display: flex;
+
+        &:first-child {
+            color: var(--half-white-transparent);
+        }
+
+        &:last-child {
+            color: gold;
+        }
+
+        &>svg {
+            $size: 2rem !important;
+
+            width: $size;
+            height: $size;
+        }
+    }
+}

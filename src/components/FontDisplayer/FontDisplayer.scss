@@ -1,0 +1,44 @@
+#font-displayer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &>header {
+        display: flex;
+        place-content: center;
+        place-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        color: var(--fore-darker-colour);
+
+        &>p {
+            width: max-content;
+
+            &:last-child {
+                display: flex;
+                place-content: center end;
+                place-items: center end;
+                flex-grow: 1;
+            }
+        }
+    }
+
+    &>main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .font-card:not(:last-child) {
+            border-bottom: 1px solid var(--fore-darker-colour);
+            padding-bottom: 2rem;
+        }
+    }
+
+    &>footer {
+        display: flex;
+        place-content: center;
+        place-items: center;
+        gap: 1rem;
+    }
+}

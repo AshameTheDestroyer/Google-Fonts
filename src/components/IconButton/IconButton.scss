@@ -1,0 +1,22 @@
+.icon-button {
+    padding: 0.75rem;
+
+    width: 4.5rem;
+    aspect-ratio: 1;
+
+    display: flex;
+    place-content: center;
+    place-items: center;
+
+    border-radius: 100%;
+    border: 1px solid transparent;
+
+    transition: transform 250ms, background-color 250ms, border-color 250ms;
+
+    &:is(:hover, :focus-within) {
+        transform: scale(1.1);
+
+        border-color: var(--fore-colour);
+        background-color: var(--background-lighter-colour);
+    }
+}
