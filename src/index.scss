@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind variants;
+@tailwind utilities;
+@tailwind components;
+
+@font-face {
+    font-family: CascadiaCode;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Cascadia Code"), url("https://fonts.cdnfonts.com/s/29131/Cascadia.woff") format("woff");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Cascadia Code", CascadiaCode, Consolas, Arial;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    @apply text-white bg-neutral-900;
+}
+
+::-webkit-scrollbar {
+    @apply size-3;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-black/50;
+}
+
+*:not(body)::-webkit-scrollbar-track {
+    @apply outline-[3px] outline-black/50 rounded-[100rem];
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-emerald-600 border-2 border-black/50 rounded-[100rem];
+}
