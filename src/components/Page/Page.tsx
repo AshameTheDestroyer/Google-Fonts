@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ComponentProps } from "../../types/ComponentProps";
+
 import "./Page.scss";
 
 type PageProps = WithRequired<ComponentProps, "id">;
