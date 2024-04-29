@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 
+import { MainContext } from "../..";
 import IconButton from "../IconButton/IconButton";
 import SearchInput from "../SearchInput/SearchInput";
 import FONT_PROPERTIES from "../../constants/FontProperties";
 
 import "./Header.scss";
 import { SunIcon } from "../Icons/SunIcon";
+import { MoonIcon } from "../Icons/MoonIcon";
 import { GoogleIcon } from "../Icons/GoogleIcon";
 import { ShoppingBagIcon } from "../Icons/ShoppingBagIcon";
 
 export default function Header(): React.ReactElement {
+    const MainState = useContext(MainContext);
+
     return (
         <header id="main-header">
             <div id="logo">
@@ -22,7 +26,9 @@ export default function Header(): React.ReactElement {
             />
             <div className="button-displayer">
                 <IconButton icon={<ShoppingBagIcon />} />
-                <IconButton icon={<SunIcon />} />
+                <IconButton icon={MainState?.isUsingDarkMode ? <SunIcon /> : <MoonIcon />} events={{
+                    onClick: _e => MainState?.ToggleDarkMode(),
+                }} />
             </div>
         </header>
     );

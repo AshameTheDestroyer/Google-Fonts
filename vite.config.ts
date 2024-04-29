@@ -5,7 +5,6 @@ import tailwind from "tailwindcss";
 export default defineConfig({
     base: "./",
     plugins: [
-        // react(),
         // @ts-ignore
         tailwind(),
     ],

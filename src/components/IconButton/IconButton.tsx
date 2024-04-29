@@ -1,11 +1,12 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
-import { ChildlessComponentProps } from "../../types/ComponentProps";
+import { ChildlessComponentProps, ComponentEventProps } from "../../types/ComponentProps";
 
 import "./IconButton.scss";
 
 type IconButtonProps = ChildlessComponentProps & {
     icon: React.ReactElement;
+    events?: ComponentEventProps<HTMLButtonElement, HTMLAttributes<HTMLButtonElement>>;
 };
 
 export default function IconButton(props: IconButtonProps): React.ReactElement {
@@ -14,6 +15,8 @@ export default function IconButton(props: IconButtonProps): React.ReactElement {
             id={props.id}
             className={["icon-button", props.className].toClassName()}
             children={props.icon}
+
+            {...props.events}
         />
     );
 }

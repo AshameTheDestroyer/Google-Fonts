@@ -19,9 +19,9 @@ html {
     --main-colour: #7FA4E1;
     --fore-darker-colour: #999;
     --background-colour: #202124;
-    --background-lighter-colour: #262A32;
     --half-transparent: #0000007C;
     --half-white-transparent: #FFFFFF7C;
+    --background-lighter-colour: #262A32;
 
     font-size: 62.5%;
 }
@@ -35,6 +35,18 @@ body {
 
     color: var(--fore-colour);
     background-color: var(--background-colour);
+
+    transition: background-color 250ms, color 250ms;
+
+    &.light-mode {
+        --fore-colour: #000;
+        --main-colour: #7FA4E1;
+        --fore-darker-colour: #202124;
+        --background-colour: #DCE1F0;
+        --half-transparent: #ffffff7c;
+        --half-white-transparent: #0000007c;
+        --background-lighter-colour: #B3C1F0;
+    }
 }
 
 ::-webkit-scrollbar {
